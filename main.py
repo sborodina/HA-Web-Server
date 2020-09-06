@@ -8,9 +8,6 @@ sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 sock.bind(("0.0.0.0", 8080))
 sock.listen(100)
 
-# epoll = select.epoll
-# epoll.register(conn.fileno(), select.EPOLLIN | select.EPOLLOUT)
-
 def handler(conn):
     time.sleep(10)
     conn.send(b"Hellow world\n")
